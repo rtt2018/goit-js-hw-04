@@ -1,9 +1,18 @@
 const firstResButton = document.getElementById("first-task-res-button");
-const messageField = document.getElementById("messageInputField");
+const messageField = document.getElementById("classInputField");
+console.log("🚀 ~ messageField:", messageField.value);
+const boxSize = document.getElementById("box-size");
 const resField = document.getElementById("first-task-result-field");
 
 firstResButton.addEventListener("click", () => {
-  resField.value = slugify(messageField.value);
+  resField.value = String(
+    isEnoughCapacity(
+      JSON.parse(
+        messageField.value.replace(/([{,]\s*)(\w+)(\s*:)/g, '$1"$2"$3')
+      ),
+      Number.parseInt(boxSize.value)
+    )
+  );
 });
 
 // Друге завдання

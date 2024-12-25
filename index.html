@@ -158,7 +158,7 @@
   </head>
   <body>
     <header>
-      <h1>Третя домашка по JS!</h1>
+      <h1>Четверта домашка по JS!</h1>
     </header>
     <section class="wrapper">
       <div>
@@ -178,22 +178,36 @@
             <li class="task-item">
               <p class="task-header">Перше завдання:</p>
               <p class="task-description">
-                Напиши функцію slugify(title), яка приймає заголовок статті,
-                параметр title і повертає slug, створений із цього рядка.<br />
-                <br />• Значенням параметра title будуть рядки, слова яких
-                розділені лише пробілами. <br />• Усі символи slug повинні бути
-                в нижньому регістрі. <br />• Усі слова slug повинні бути
-                розділені тире.
+                Напиши функцію
+                <code>isEnoughCapacity(products, containerSize)</code>, яка
+                обчислює, чи помістяться всі товари в контейнер при пакуванні.
+                Функція оголошує два параметри:<br />• products — об’єкт, у
+                якому ключі містять назви товарів, а їхні значення — кількість
+                цих товарів. Наприклад, <code>{ apples: 2, grapes: 4 }</code>.
+                <br />• containerSize — число, максимальна кількість одиниць
+                товарів, яку в себе може вмістити контейнер. <br />Функція має
+                повернути результат перевірки, чи помістяться всі товари в
+                контейнер. Тобто порахувати загальну кількість товарів в об’єкті
+                products і повернути true, якщо вона менше або дорівнює
+                containerSize, і false, якщо ні.
               </p>
               <form class="tasc-form">
                 <div class="field-container">
                   <label class="tasc-field-label">
-                    Введіть повідомлення, яке треба перетворити на slug:
+                    Введіть об'єкт:
                     <input
                       class="first-task-arg-field second-tasc width-large"
                       type="text"
-                      name="messageInputField"
-                      id="messageInputField"
+                      name="classInputField"
+                      id="classInputField"
+                  /></label>
+                  <label class="tasc-field-label">
+                    Введіть величину контейнера:
+                    <input
+                      class="first-task-arg-field second-tasc"
+                      type="number"
+                      name="box-size"
+                      id="box-size"
                   /></label>
                 </div>
                 <button
