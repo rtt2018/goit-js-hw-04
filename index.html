@@ -154,6 +154,10 @@
       .width-small {
         width: 100px;
       }
+
+      .textarea-heigth {
+        height: 200px;
+      }
     </style>
   </head>
   <body>
@@ -230,41 +234,24 @@
             <li class="task-item">
               <p class="task-header">Друге завдання:</p>
               <p class="task-description">
-                Напиши функцію під назвою makeArray, яка приймає три параметри:
-                firstArray (масив), secondArray (масив) і maxLength (число).
-                Функція повинна створювати новий масив, який містить усі
-                елементи з firstArray, а потім усі елементи з secondArray.<br />
-                <br />• Якщо кількість елементів у новому масиві перевищує
-                maxLength, функція повинна повернути копію масиву з довжиною
-                maxLength елементів. <br />• В іншому випадку функція повинна
-                повернути весь новий масив.
+                Напиши функцію calcAverageCalories(days), яка повертає
+                середньодобове значення кількості калорій, які спортсмен
+                споживав протягом тижня. Функція очікує один параметр: days —
+                масив об’єктів. Кожен об’єкт описує день тижня та кількість
+                калорій calories, спожитих спортсменом, у цей день.
               </p>
               <form class="tasc-form">
                 <div class="field-container">
                   <label class="tasc-field-label"
-                    >Введіть перший масив:
-                    <input
-                      class="second-task-arg-field width-large"
-                      type="text"
+                    >Введіть масив об'єктів:
+                    <textarea
+                      class="second-task-arg-field width-large textarea-heigth"
+                      rows="10"
+                      resize="none"
                       name="firstArrayField"
                       id="firstArrayField"
-                  /></label>
-                  <label class="tasc-field-label"
-                    >Введіть другий масив:
-                    <input
-                      class="second-task-arg-field width-large"
-                      type="text"
-                      name="secondArrayField"
-                      id="secondArrayField"
-                  /></label>
-                  <label class="tasc-field-label"
-                    >Введіть довжину підсумкового масиву:
-                    <input
-                      class="second-task-arg-field width-small"
-                      type="number"
-                      name="maxLengthArray"
-                      id="maxLengthArray"
-                  /></label>
+                    ></textarea>
+                  </label>
                 </div>
                 <button
                   type="button"

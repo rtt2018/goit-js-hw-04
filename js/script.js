@@ -1,6 +1,5 @@
 const firstResButton = document.getElementById("first-task-res-button");
 const messageField = document.getElementById("classInputField");
-console.log("🚀 ~ messageField:", messageField.value);
 const boxSize = document.getElementById("box-size");
 const resField = document.getElementById("first-task-result-field");
 
@@ -19,16 +18,20 @@ firstResButton.addEventListener("click", () => {
 
 const secondResButton = document.getElementById("second-task-res-button");
 const firstArray = document.getElementById("firstArrayField");
-const secondArray = document.getElementById("secondArrayField");
-const maxLength = document.getElementById("maxLengthArray");
 const resSecondField = document.getElementById("second-task-result-field");
 
 secondResButton.addEventListener("click", () => {
-  resSecondField.value = makeArray(
-    firstArray.value.replace(/[\[\],"]/g, "").split(" "),
-    secondArray.value.replace(/[\[\],"]/g, "").split(" "),
-    maxLength.value
-  ).join(", ");
+  if (firstArray.value) {
+    resSecondField.value = calcAverageCalories(
+      JSON.parse(
+        firstArray.value
+          .replace(/(\w+)(?=:)/g, '"$1"')
+          .replace(/,(\s*[}\]])/g, "$1")
+      )
+    );
+  } else {
+    resSecondField.value = "Введіть масив у текстове поле!";
+  }
 });
 
 // Третє завдання
