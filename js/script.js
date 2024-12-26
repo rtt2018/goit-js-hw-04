@@ -37,14 +37,36 @@ secondResButton.addEventListener("click", () => {
 // Третє завдання
 
 const thirdResButton = document.getElementById("third-task-res-button");
-const numberArray = document.getElementById("third-tasc-message");
-const checkNumber = document.getElementById("third-tasc-number");
+const switchRadio = document.getElementsByName("third-tasc-method");
+const changeUsernameInput = document.getElementById("third-tasc-name-value");
+const changeTimeInput = document.getElementById("third-radio-time-value");
 const resThirdField = document.getElementById("third-task-result-field");
 
 thirdResButton.addEventListener("click", () => {
-  console.log(numberArray.value);
-  resThirdField.value = filterArray(
-    numberArray.value.replace(/[\[\],"]/g, "").split(" "),
-    Number.parseInt(checkNumber.value)
-  ).join(", ");
+  for (const radioChecked of switchRadio) {
+    if (radioChecked.checked) {
+      switch (Number.parseInt(radioChecked.value)) {
+        case 1:
+          console.log("Змінюємо ім'я", changeUsernameInput.value);
+
+          profile.changeUsername(changeUsernameInput.value);
+          resThirdField.value = `Ім'я спортсмена змінено на ${changeUsernameInput.value}`;
+          break;
+        case 2:
+          profile.updatePlayTime(
+            Number.parseInt(Number.parseInt(changeTimeInput.value))
+          );
+          resThirdField.value = `Кількість годин збільшено на ${Number.parseInt(
+            changeTimeInput.value
+          )}`;
+          break;
+        case 3:
+          resThirdField.value = profile.getInfo();
+          break;
+        default:
+          resThirdField.value = "Виберіть метод!";
+          break;
+      }
+    }
+  }
 });

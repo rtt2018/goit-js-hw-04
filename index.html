@@ -77,7 +77,6 @@
         border-radius: 4px;
         border: 1px solid;
         background-color: transparent;
-        margin-top: 8px;
         padding: 4px 8px;
         font-size: 16px;
         height: 24px;
@@ -91,7 +90,6 @@
         border-radius: 4px;
         border: 1px solid;
         background-color: transparent;
-        margin-top: 8px;
         padding: 4px 8px;
         font-size: 16px;
         height: 24px;
@@ -130,6 +128,7 @@
         outline: none;
         width: 400px;
       }
+
       .field-container {
         display: flex;
         gap: 20px;
@@ -138,11 +137,49 @@
         flex-wrap: wrap;
       }
 
+      .field-radio-column {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 30px;
+      }
+
       .tasc-field-label {
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         text-align: center;
         display: block;
         margin: 0 auto;
+      }
+
+      .tasc-radio-label {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        display: flex;
+        align-items: center;
+      }
+
+      .second-task-arg-radio {
+        border-radius: 4px;
+        border: 1px solid;
+        background-color: transparent;
+        padding: 4px 8px;
+        font-size: 16px;
+        height: 24px;
+        outline: none;
+        width: auto;
+        vertical-align: middle;
+        margin-right: 10px;
+      }
+
+      .first-task-arg-radio {
+        border-radius: 4px;
+        border: 1px solid;
+        background-color: transparent;
+        padding: 4px 8px;
+        font-size: 16px;
+        height: 24px;
+        outline: none;
+        width: 150px;
+        display: block;
+        margin-left: 10px;
       }
 
       .width-large {
@@ -273,35 +310,62 @@
             <li class="task-item">
               <p class="task-header">Третє завдання:</p>
               <p class="task-description">
-                Напиши функцію filterArray(numbers, value), яка приймає масив
-                чисел (numbers) та значення (value) як параметри. Функція
-                повинна повертати новий масив лише тих чисел із масиву numbers,
-                які більші за значення value. <br /><br />Усередині функції:
-                <br />• Створи порожній масив, у який будеш додавати підходящі
-                числа. <br />• Використай цикл для ітерації кожного елемента
-                масиву numbers. <br />• Використовуй умовний оператор if
-                усередині циклу для перевірки кожного елемента і додавання до
-                свого масиву. <br />• Поверни свій новий масив з підходящими
-                числами як результат.
+                Об’єкт profile описує профіль користувача на ігровій платформі.
+                У його властивостях зберігається ім’я профілю username та
+                кількість активних годин playTime, проведених у грі. const
+                profile = { username: "Jacob", playTime: 300, };
+                <br /><br />Доповни об’єкт profile методами для роботи з його
+                властивостями. <br />• Метод changeUsername(newName) повинен
+                приймати рядок (нове ім’я) в параметр newName та змінювати
+                значення властивості username на нове. Нічого не повертає.
+                <br />• Метод updatePlayTime(hours) повинен приймати число
+                (кількість годин) у параметр hours та збільшити на нього
+                значення властивості playTime. Нічого не повертає. <br />• Метод
+                getInfo() має повертати рядок формату Username has amount active
+                hours!, де Username — це ім’я профілю, а amount — кількість
+                ігрових годин.
               </p>
               <form class="tasc-form">
-                <div class="field-container">
-                  <label class="tasc-field-label"
-                    >Введіть елементи масиву:
+                <p class="task-description" style="font-weight: 700">
+                  Виберіть метод, введіть потрібне значення і натисніть кнопку
+                  "Дивитись результат:"
+                </p>
+                <div class="field-container field-radio-column">
+                  <label class="tasc-radio-label">
                     <input
-                      class="second-task-arg-field width-large"
+                      class="second-task-arg-radio"
+                      type="radio"
+                      name="third-tasc-method"
+                      id="third-tasc-name"
+                      value="1"
+                    />changeUsername(newName): newName =
+                    <input
                       type="text"
-                      name="third-tasc-message"
-                      id="third-tasc-message"
-                  /></label>
-                  <label class="tasc-field-label"
-                    >Введіть число:
+                      class="first-task-arg-radio"
+                      id="third-tasc-name-value"
+                    />
+                  </label>
+                  <label class="tasc-radio-label">
                     <input
-                      class="second-task-arg-field"
+                      class="second-task-arg-radio"
+                      type="radio"
+                      name="third-tasc-method"
+                      id="third-tasc-radio-time"
+                      value="2" />updatePlayTime(hours): hours =
+                    <input
                       type="number"
-                      name="third-tasc-number"
-                      id="third-tasc-number"
+                      class="first-task-arg-radio"
+                      id="third-radio-time-value"
                   /></label>
+                  <label class="tasc-radio-label">
+                    <input
+                      class="second-task-arg-radio"
+                      type="radio"
+                      name="third-tasc-method"
+                      id="third-tasc-info"
+                      value="3"
+                    />getInfo():</label
+                  >
                 </div>
                 <button
                   type="button"
